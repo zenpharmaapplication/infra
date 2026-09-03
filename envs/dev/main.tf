@@ -19,7 +19,7 @@ module "vpc" {
   database_subnet_cidrs = ["10.0.5.0/24", "10.0.6.0/24"]
 }
 
-
+#EKS module
 module "eks" {
   source = "../../modules/eks"
 
@@ -30,8 +30,8 @@ module "eks" {
   kubernetes_version = "1.34"
   instance_types     = ["c7i-flex.large"]
   min_size           = 1
-  max_size           = 2
-  desired_size       = 1
+  max_size           = 3
+  desired_size       = 3
 }
 
 module "rds" {
